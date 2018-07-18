@@ -1,0 +1,19 @@
+{
+  "name": "storage-wrap",
+  "version": "0.0.1",
+  "description": "web localStorage & sessionStorage wrapper",
+  "main": "dist/bundle.js",
+  "author": "elia.camposilvan@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "rollup": "^0.63.2",
+    "rollup-plugin-babel": "^3.0.7"
+  },
+  "scripts": {
+    "rollup": "node ./rollup/build.js"
+  }
+}
