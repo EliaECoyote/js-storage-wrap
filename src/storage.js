@@ -1,4 +1,4 @@
-import { loadFromStorage, saveInStorage } from './helpers';
+import { loadFromStorage, saveInStorage } from './storageHelpers';
 
 const initializeForStorage = storage => ({
   load: itemName => loadFromStorage({ storage, itemName }),

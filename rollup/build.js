@@ -5,9 +5,7 @@ const inputOptions = {
   input: 'src/main.js',
   plugins: [
     babel({
-      exclude: 'node_modules/**',
-      plugins: ['external-helpers'],
-      externalHelpers: true
+      exclude: 'node_modules/**'
     })
   ]
 };
