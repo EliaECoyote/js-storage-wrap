@@ -46,12 +46,18 @@ var saveInStorage = function saveInStorage(_ref2) {
   }
 };
 
+var classCallCheck = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
 var initializeForStorage = function initializeForStorage(storage) {
   return {
     load: function load(itemName) {
       return loadFromStorage({ storage: storage, itemName: itemName });
     },
-    set: function set(itemName, item, lifespan) {
+    set: function set$$1(itemName, item, lifespan) {
       return saveInStorage({ storage: storage, itemName: itemName, item: item, lifespan: lifespan });
     },
     hasItem: function (_hasItem) {
@@ -71,7 +77,7 @@ var initializeForStorage = function initializeForStorage(storage) {
 };
 
 var StorageWrapper = function StorageWrapper() {
-  babelHelpers.classCallCheck(this, StorageWrapper);
+  classCallCheck(this, StorageWrapper);
 
   if (typeof window === 'undefined') {
     console.error('window object not available. cannot set storage items');

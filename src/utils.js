@@ -11,10 +11,12 @@ export const isValidTTL = timestamp => {
 export const isObject = val => val === Object(val);
 
 export const getObjectFromString = (string) => {
+  if (typeof string === 'number') {
+    return null;
+  }
   try {
     return JSON.parse(string);
   } catch(e) {
-    console.error('[webStorageWrapper error]', e);
     return null;
   }
 };
