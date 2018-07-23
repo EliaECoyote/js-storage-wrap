@@ -76,10 +76,20 @@ var initializeForStorage = function initializeForStorage(storage) {
   };
 };
 
+var hasStorage = function hasStorage() {
+  try {
+    var mod = 'mod';
+    localStorage.setItem(mod, mod);
+    localStorage.removeItem(mod);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
 var StorageWrapper = function StorageWrapper() {
   classCallCheck(this, StorageWrapper);
 
-  if (typeof window === 'undefined') {
+  if (hasStorage) {
     console.error('window object not available. cannot set storage items');
   } else {
     this.local = initializeForStorage(localStorage);

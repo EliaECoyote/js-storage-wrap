@@ -32,6 +32,7 @@ test('[isObject] should return correct value', () => {
   expect(isObject([])).toBe(true);
   expect(isObject('')).toBe(false);
   expect(isObject(1)).toBe(false);
+  expect(isObject(1.23)).toBe(false);
 });
 
 test('[getObjectFromString] should return correct value', () => {

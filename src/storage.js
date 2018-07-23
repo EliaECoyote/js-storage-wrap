@@ -6,12 +6,22 @@ const initializeForStorage = storage => ({
   hasItem: itemName => hasItem(storage, itemName)
 });
 
+const hasStorage = () => {
+  try {
+    const mod = 'mod';
+    localStorage.setItem(mod, mod);
+    localStorage.removeItem(mod);
+    return true;
+  } catch(e) {
+    return false;
+  }
+};
 export class StorageWrapper {
   local;
   session;
 
   constructor() {
-    if (typeof window === 'undefined') {
+    if (hasStorage) {
       console.error('window object not available. cannot set storage items');
     } else {
       this.local = initializeForStorage(localStorage);

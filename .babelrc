@@ -1,12 +1,12 @@
 {
-  "presets": [ [ "env", { "modules": false } ] ],
-  "plugins": [
-    "external-helpers",
-    "transform-class-properties"
-  ],
   "env": {
     "test": {
-      "presets": [ [ "env", { "modules": "commonjs" } ] ]
+      "presets": [ [ "env", { "modules": "commonjs" } ] ],
+      "plugins": [ "transform-class-properties" ]
+    },
+    "production": {
+      "presets": [ [ "env", { "modules": false } ] ],
+      "plugins": [ "external-helpers", "transform-class-properties" ]
     }
   }
 }
