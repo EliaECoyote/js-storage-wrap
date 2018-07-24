@@ -1,5 +1,6 @@
-export const loadFromStorage = ({ storage, itemName }) => {
+export const loadFromStorage = ({ storageFn, itemName }) => {
   try {
+    const storage = storageFn();
     const rawItem = storage.getItem(itemName);
     if (rawItem == null) {
       return null;
@@ -14,14 +15,15 @@ export const loadFromStorage = ({ storage, itemName }) => {
     }
     return rawItem;
   } catch (err) {
-    console.error(err);
+    console.warn(err);
     return null;
   }
 };
 
-export const saveInStorage = ({ storage, item, itemName, lifespan }) => {
+export const saveInStorage = ({ storageFn, item, itemName, lifespan }) => {
   if (lifespan === 0) { return; }
   try {
+    const storage = storageFn();
     if (lifespan == null) {
       storage.setItem(itemName, isObject(item) ? JSON.stringify(item) : item);
     } else {
@@ -29,12 +31,20 @@ export const saveInStorage = ({ storage, item, itemName, lifespan }) => {
       const wrapper = { ttl, item };
       storage.setItem(itemName, JSON.stringify(wrapper));
     }
+    return true;
   } catch (err) {
-    console.error(err);
+    console.warn(err);
+    return false;
   }
 };
 
-export const hasItem = ({ storage, itemName }) => {
-  const item = storage.loadItem(itemName);
-  return item != null;
+export const hasItem = ({ storageFn, itemName }) => {
+  try {
+    const storage = storageFn();
+    const item = storage.loadItem(itemName);
+    return item != null;
+  } catch (err) {
+    console.warn(err);
+    return false;
+  }
 }
