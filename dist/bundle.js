@@ -1,10 +1,11 @@
 'use strict';
 
 var loadFromStorage = function loadFromStorage(_ref) {
-  var storage = _ref.storage,
+  var storageFn = _ref.storageFn,
       itemName = _ref.itemName;
 
   try {
+    var storage = storageFn();
     var rawItem = storage.getItem(itemName);
     if (rawItem == null) {
       return null;
@@ -19,13 +20,13 @@ var loadFromStorage = function loadFromStorage(_ref) {
     }
     return rawItem;
   } catch (err) {
-    console.error(err);
+    console.warn(err);
     return null;
   }
 };
 
 var saveInStorage = function saveInStorage(_ref2) {
-  var storage = _ref2.storage,
+  var storageFn = _ref2.storageFn,
       item = _ref2.item,
       itemName = _ref2.itemName,
       lifespan = _ref2.lifespan;
@@ -34,6 +35,7 @@ var saveInStorage = function saveInStorage(_ref2) {
     return;
   }
   try {
+    var storage = storageFn();
     if (lifespan == null) {
       storage.setItem(itemName, isObject(item) ? JSON.stringify(item) : item);
     } else {
@@ -41,8 +43,24 @@ var saveInStorage = function saveInStorage(_ref2) {
       var wrapper = { ttl: ttl, item: item };
       storage.setItem(itemName, JSON.stringify(wrapper));
     }
+    return true;
   } catch (err) {
-    console.error(err);
+    console.warn(err);
+    return false;
+  }
+};
+
+var hasItem = function hasItem(_ref3) {
+  var storageFn = _ref3.storageFn,
+      itemName = _ref3.itemName;
+
+  try {
+    var storage = storageFn();
+    var item = storage.loadItem(itemName);
+    return item != null;
+  } catch (err) {
+    console.warn(err);
+    return false;
   }
 };
 
@@ -52,50 +70,29 @@ var classCallCheck = function (instance, Constructor) {
   }
 };
 
-var initializeForStorage = function initializeForStorage(storage) {
+var initializeForStorage = function initializeForStorage(storageFn) {
   return {
     load: function load(itemName) {
-      return loadFromStorage({ storage: storage, itemName: itemName });
+      return loadFromStorage({ storageFn: storageFn, itemName: itemName });
     },
     set: function set$$1(itemName, item, lifespan) {
-      return saveInStorage({ storage: storage, itemName: itemName, item: item, lifespan: lifespan });
+      return saveInStorage({ storageFn: storageFn, itemName: itemName, item: item, lifespan: lifespan });
     },
-    hasItem: function (_hasItem) {
-      function hasItem(_x) {
-        return _hasItem.apply(this, arguments);
-      }
-
-      hasItem.toString = function () {
-        return _hasItem.toString();
-      };
-
-      return hasItem;
-    }(function (itemName) {
-      return hasItem(storage, itemName);
-    })
+    has: function has(itemName) {
+      return hasItem(storageFn, itemName);
+    }
   };
 };
 
-var hasStorage = function hasStorage() {
-  try {
-    var mod = 'mod';
-    localStorage.setItem(mod, mod);
-    localStorage.removeItem(mod);
-    return true;
-  } catch (e) {
-    return false;
-  }
-};
 var StorageWrapper = function StorageWrapper() {
   classCallCheck(this, StorageWrapper);
 
-  if (hasStorage) {
-    console.error('window object not available. cannot set storage items');
-  } else {
-    this.local = initializeForStorage(localStorage);
-    this.session = initializeForStorage(sessionStorage);
-    console.warn('storage wrapper initialized.');
-  }
+  this.local = initializeForStorage(function () {
+    return localStorage;
+  });
+  this.session = initializeForStorage(function () {
+    return sessionStorage;
+  });
 };
 
 var storage = new StorageWrapper();

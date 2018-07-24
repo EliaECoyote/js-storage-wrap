@@ -1,4 +1,4 @@
-import { getTTL, isValidTTL, isObject, getObjectFromString } from '../../src/utils';
+import { getTTL, isValidTTL, isObject, getObjectFromString } from '../src/utils';
 
 const date = new Date();
 

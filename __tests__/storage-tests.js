@@ -1,4 +1,4 @@
-import { StorageWrapper } from '../storage';
+import { StorageWrapper } from '../src/storage';
 
 test('[StorageWrapper] should return null / false if storage not available', () => {
   global.console = { warn: jest.fn() };
