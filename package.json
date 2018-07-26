@@ -27,6 +27,7 @@
   },
   "scripts": {
     "rollup": "NODE_ENV=production node ./rollup/build.js",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint"
   }
 }
