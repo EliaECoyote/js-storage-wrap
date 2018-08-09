@@ -79,3 +79,17 @@ test('[saveInStorage] should not save if lifespan is 0', () => {
   items.forEach(i => saveInStorage({ itemName: i.name, item: i.value, lifespan: 0 }));
   items.forEach(i => expect(storageMock.getItem(i.name)).toBeNull());
 });
+
+test('[saveInStorage] should save items w/o ttl if lifespan is not defined ', () => {
+  const storageMock = new StorageMock();
+  const storageFn = () => storageMock;
+  const items = [
+    { name: 'test_string', value: 'foo' },
+    { name: 'test_object', value: testObj },
+    { name: 'test_array', value: testArray },
+  ];
+  items.forEach(i => saveInStorage({ storageFn, itemName: i.name, item: i.value }));
+  expect(storageMock.getItem(items[0].name)).toEqual(items[0].value);
+  expect(storageMock.getItem(items[1].name)).toEqual(JSON.stringify(items[1].value));
+  expect(storageMock.getItem(items[2].name)).toEqual(JSON.stringify(items[2].value));
+});

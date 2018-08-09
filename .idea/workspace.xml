@@ -19,8 +19,8 @@
       <file leaf-file-name="storageHelpers-tests.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/__tests__/storageHelpers-tests.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="80" column="3" lean-forward="true" selection-start-line="80" selection-start-column="3" selection-end-line="80" selection-end-column="3" />
+            <state relative-caret-position="790">
+              <caret line="90" column="48" selection-start-line="90" selection-start-column="48" selection-end-line="90" selection-end-column="48" />
               <folding>
                 <element signature="e#0#56#0" expanded="true" />
               </folding>
@@ -80,6 +80,7 @@
       <find>beforeEach</find>
       <find>getObjectFromString</find>
       <find>loadFromStorage =</find>
+      <find>storageFn</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -249,14 +250,11 @@
       <workItem from="1532597342496" duration="1545000" />
       <workItem from="1532599232736" duration="4368000" />
       <workItem from="1532608949698" duration="244000" />
-      <workItem from="1533850023919" duration="1473000" />
+      <workItem from="1533850023919" duration="1729000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="[loadFromStorage]_should_return_value_if_present_ - 2018.07.26 at 14h 26m 14s.xml">
-      <configuration name="[loadFromStorage] should return value if present " configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="[loadFromStorage]_should_return_value_if_present_ - 2018.07.26 at 14h 30m 54s.xml">
       <configuration name="[loadFromStorage] should return value if present " configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
@@ -284,9 +282,12 @@
     <history-entry file="[saveInStorage]_should_not_save_if_lifespan_is_0 - 2018.08.09 at 23h 53m 19s.xml">
       <configuration name="[saveInStorage] should not save if lifespan is 0" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="[saveInStorage]_should_not_save_if_lifespan_is_0 - 2018.08.09 at 23h 53m 44s.xml">
+      <configuration name="[saveInStorage] should not save if lifespan is 0" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7636000" />
+    <option name="totallyTimeSpent" value="7892000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
@@ -299,7 +300,7 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.3296593" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41883767" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.41883767" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -510,8 +511,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/__tests__/storageHelpers-tests.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="80" column="3" lean-forward="true" selection-start-line="80" selection-start-column="3" selection-end-line="80" selection-end-column="3" />
+        <state relative-caret-position="790">
+          <caret line="90" column="48" selection-start-line="90" selection-start-column="48" selection-end-line="90" selection-end-column="48" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
           </folding>
