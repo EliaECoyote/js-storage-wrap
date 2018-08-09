@@ -14,7 +14,11 @@ export const loadFromStorage = ({ storageFn, itemName }) => {
       return rawItem;
     }
     if (wrapper.ttl != null) {
-      return isValidTTL(wrapper.ttl) ? wrapper.item : null;
+      if (isValidTTL(wrapper.ttl)) {
+        return wrapper.item
+      }
+      storage.removeItem(itemName);
+      return null;
     }
     return wrapper;
   } catch (err) {
@@ -44,12 +48,5 @@ export const saveInStorage = ({
 };
 
 export const hasItem = ({ storageFn, itemName }) => {
-  try {
-    const storage = storageFn();
-    const item = storage.loadItem(itemName);
-    return item != null;
-  } catch (err) {
-    console.warn(err);
-    return false;
-  }
+  return loadFromStorage({ storageFn, itemName }) != null;
 };

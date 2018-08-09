@@ -1,4 +1,4 @@
-import { loadFromStorage, saveInStorage } from '../src/storageHelpers';
+import { hasItem, loadFromStorage, saveInStorage } from '../src/storageHelpers';
 import { StorageMock } from '../__mocks__/storage';
 
 const date = new Date();
@@ -56,7 +56,7 @@ test('[loadFromStorage] should return parsed value if present (w ttl)', () => {
   });
 });
 
-test('[loadFromStorage] should not return value if ttl is expired', () => {
+test('[loadFromStorage] should not return value (and also removeItem) if ttl is expired', () => {
   const storageMock = new StorageMock();
   const currentTime = new Date().getTime();
   const ttl = currentTime - 1;
@@ -68,6 +68,7 @@ test('[loadFromStorage] should not return value if ttl is expired', () => {
   items.forEach(i => storageMock.setItem(i.name, i.value));
   const storageFn = () => storageMock;
   items.forEach(i => expect(loadFromStorage({ storageFn, itemName: i.name })).toBeNull());
+  items.forEach(i => expect(storageMock.getItem(i.name)).toBeNull());
 });
 
 test('[saveInStorage] should not save if lifespan is 0', () => {
@@ -107,4 +108,18 @@ test('[saveInStorage] should save items w ttl if lifespan is defined ', () => {
   ];
   items.forEach(i => saveInStorage({ storageFn, itemName: i.name, item: i.value, lifespan }));
   items.forEach(i => expect(storageMock.getItem(i.name)).toEqual(JSON.stringify({ ttl, item: i.value })));
+});
+
+test('[hasItem] should return true/false if item is present/absent', () => {
+  const storageMock = new StorageMock();
+  const storageFn = () => storageMock;
+  const currentTime = new Date().getTime();
+  const ttl = currentTime + 1;
+  const items = [
+    { name: 'test_string', value: JSON.stringify({ ttl, item: 'foo' }) },
+    { name: 'test_object', value: JSON.stringify({ ttl, item: testObj }) },
+    { name: 'test_array', value: JSON.stringify({ ttl, item: testArray }) },
+  ];
+  items.forEach(i => storageMock.setItem(i.name, i.value));
+  items.forEach(i => expect(hasItem({ storageFn, itemName: i.name })).toBe(true));
 });
