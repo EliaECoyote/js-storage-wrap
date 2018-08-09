@@ -10,15 +10,13 @@ export const loadFromStorage = ({ storageFn, itemName }) => {
       return null;
     }
     const wrapper = getObjectFromString(rawItem);
-    if (wrapper != null) {
-      if (wrapper.ttl != null) {
-        const item = wrapper.item ? getObjectFromString(wrapper.item) : wrapper.item;
-        const resolvedItem = item || wrapper.item;
-        return isValidTTL(rawItem.ttl) ? resolvedItem : null;
-      }
-      return wrapper;
+    if (wrapper == null) {
+      return rawItem;
     }
-    return rawItem;
+    if (wrapper.ttl != null) {
+      return isValidTTL(wrapper.ttl) ? wrapper.item : null;
+    }
+    return wrapper;
   } catch (err) {
     console.warn(err);
     return null;

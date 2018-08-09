@@ -23,7 +23,7 @@ test('[loadFromStorage] should return null if value is not present', () => {
   expect(item).toBeNull();
 });
 
-test('[loadFromStorage] should return parsed value if present (no ttl)', () => {
+test('[loadFromStorage] should return parsed value if present (w/o ttl)', () => {
   const storageMock = new StorageMock();
   const items = [
     { name: 'test_string', value: 'foo' },
@@ -34,6 +34,23 @@ test('[loadFromStorage] should return parsed value if present (no ttl)', () => {
   const storageFn = () => storageMock;
   items.forEach((i, index) => {
     const expected = index === 0 ? i.value : JSON.parse(i.value);
+    expect(loadFromStorage({ storageFn, itemName: i.name })).toEqual(expected);
+  });
+});
+
+test('[loadFromStorage] should return parsed value if present (w ttl)', () => {
+  const storageMock = new StorageMock();
+  const currentTime = new Date().getTime();
+  const ttl = currentTime + 1;
+  const items = [
+    { name: 'test_string', value: JSON.stringify({ ttl, item: 'foo' }) },
+    { name: 'test_object', value: JSON.stringify({ ttl, item: testObj }) },
+    { name: 'test_array', value: JSON.stringify({ ttl, item: testArray }) },
+  ];
+  items.forEach(i => storageMock.setItem(i.name, i.value));
+  const storageFn = () => storageMock;
+  items.forEach(i => {
+    const expected = JSON.parse(i.value).item;
     expect(loadFromStorage({ storageFn, itemName: i.name })).toEqual(expected);
   });
 });
