@@ -6,7 +6,7 @@ test('[StorageWrapper] should return null / false if storage not available', () 
   const loadedItem = storageWrapper.local.load('test');
   const hadSuccessSetting = storageWrapper.local.set('test', 'test');
   const hadSuccessChecking = storageWrapper.local.has('test');
-  expect(loadedItem).toBeNull;
+  expect(loadedItem).toBeNull();
   expect(hadSuccessSetting).toBe(false);
   expect(hadSuccessChecking).toBe(false);
   expect(console.warn).toHaveBeenCalledTimes(3);

@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 import {
   getObjectFromString, getTTL, isObject, isValidTTL,
 } from './utils';
+=======
+import {getObjectFromString, getTTL, isObject, isValidTTL} from "./utils";
+>>>>>>> master
 
 export const loadFromStorage = ({ storageFn, itemName }) => {
   try {
@@ -9,11 +13,12 @@ export const loadFromStorage = ({ storageFn, itemName }) => {
     if (rawItem == null) {
       return null;
     }
-    if (isObject(rawItem)) {
-      const wrapper = JSON.parse(rawItem);
+    const wrapper = getObjectFromString(rawItem);
+    if (wrapper != null) {
       if (wrapper.ttl != null) {
-        const item = wrapper.item && isObject(wrapper.item) ? JSON.parse(wrapper.item) : wrapper.item;
-        return isValidTTL(rawItem.ttl) ? item : null;
+        const item = wrapper.item ? getObjectFromString(wrapper.item) : wrapper.item;
+        const resolvedItem = item || wrapper.item;
+        return isValidTTL(rawItem.ttl) ? resolvedItem : null;
       }
       return wrapper;
     }
@@ -53,4 +58,8 @@ export const hasItem = ({ storageFn, itemName }) => {
     console.warn(err);
     return false;
   }
+<<<<<<< HEAD
 };
+=======
+}
+>>>>>>> master
