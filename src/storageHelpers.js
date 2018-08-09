@@ -1,3 +1,7 @@
+import {
+  getObjectFromString, getTTL, isObject, isValidTTL,
+} from './utils';
+
 export const loadFromStorage = ({ storageFn, itemName }) => {
   try {
     const storage = storageFn();
@@ -20,8 +24,10 @@ export const loadFromStorage = ({ storageFn, itemName }) => {
   }
 };
 
-export const saveInStorage = ({ storageFn, item, itemName, lifespan }) => {
-  if (lifespan === 0) { return; }
+export const saveInStorage = ({
+  storageFn, item, itemName, lifespan,
+}) => {
+  if (lifespan === 0) { return false; }
   try {
     const storage = storageFn();
     if (lifespan == null) {
@@ -47,4 +53,4 @@ export const hasItem = ({ storageFn, itemName }) => {
     console.warn(err);
     return false;
   }
-}
+};

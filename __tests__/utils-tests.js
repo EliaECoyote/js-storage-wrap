@@ -1,4 +1,6 @@
-import { getTTL, isValidTTL, isObject, getObjectFromString } from '../src/utils';
+import {
+  getTTL, isValidTTL, isObject, getObjectFromString,
+} from '../src/utils';
 
 const date = new Date();
 
@@ -18,7 +20,6 @@ test('[getTTL] should return correct ttl for pre-determined lifespan', () => {
 });
 
 test('[isValidTTL] should return false/true if ttl is reached/future', () => {
-  const lifespanMs = 1000;
   const pastTimestamp = date.getTime() - 1;
   const futureTimestamp = date.getTime() + 1;
   const now = date.getTime();
@@ -44,4 +45,4 @@ test('[getObjectFromString] should return correct value', () => {
   expect(getObjectFromString(JSON.stringify(array))).toEqual(array);
   expect(getObjectFromString(string)).toBeNull();
   expect(getObjectFromString(number)).toBeNull();
-})
+});
