@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 import {
   getObjectFromString, getTTL, isObject, isValidTTL,
 } from './utils';
-=======
-import {getObjectFromString, getTTL, isObject, isValidTTL} from "./utils";
->>>>>>> master
 
 export const loadFromStorage = ({ storageFn, itemName }) => {
   try {
@@ -58,8 +54,4 @@ export const hasItem = ({ storageFn, itemName }) => {
     console.warn(err);
     return false;
   }
-<<<<<<< HEAD
 };
-=======
-}
->>>>>>> master
