@@ -3,3 +3,5 @@ extends:
   - plugin:jest/recommended
 plugins:
   - jest
+rules:
+  object-property-newline: 2
