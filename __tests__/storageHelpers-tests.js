@@ -4,6 +4,7 @@ import { StorageMock } from '../__mocks__/storage';
 const date = new Date();
 const testObj = { testString: 'foo' };
 const testArray = [1, 2, 3, 4, 5];
+const lifespan = 200;
 
 beforeEach(() => {
   global.Date = jest.fn(() => date);
@@ -92,4 +93,18 @@ test('[saveInStorage] should save items w/o ttl if lifespan is not defined ', ()
   expect(storageMock.getItem(items[0].name)).toEqual(items[0].value);
   expect(storageMock.getItem(items[1].name)).toEqual(JSON.stringify(items[1].value));
   expect(storageMock.getItem(items[2].name)).toEqual(JSON.stringify(items[2].value));
+});
+
+test('[saveInStorage] should save items w ttl if lifespan is defined ', () => {
+  const storageMock = new StorageMock();
+  const storageFn = () => storageMock;
+  const currentTime = new Date().getTime();
+  const ttl = currentTime + lifespan;
+  const items = [
+    { name: 'test_string', value: 'foo' },
+    { name: 'test_object', value: testObj },
+    { name: 'test_array', value: testArray },
+  ];
+  items.forEach(i => saveInStorage({ storageFn, itemName: i.name, item: i.value, lifespan }));
+  items.forEach(i => expect(storageMock.getItem(i.name)).toEqual(JSON.stringify({ ttl, item: i.value })));
 });

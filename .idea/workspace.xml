@@ -19,8 +19,8 @@
       <file leaf-file-name="storageHelpers-tests.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/__tests__/storageHelpers-tests.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="790">
-              <caret line="90" column="48" selection-start-line="90" selection-start-column="48" selection-end-line="90" selection-end-column="48" />
+            <state relative-caret-position="409">
+              <caret line="108" column="106" lean-forward="true" selection-start-line="108" selection-start-column="106" selection-end-line="108" selection-end-column="106" />
               <folding>
                 <element signature="e#0#56#0" expanded="true" />
               </folding>
@@ -164,7 +164,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.[saveInStorage] should not save if lifespan is 0">
+  <component name="RunManager" selected="Jest.[saveInStorage] should save items w ttl if lifespan is defined ">
     <configuration name="[loadFromStorage] should not return value if ttl is expired" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -174,17 +174,6 @@
       <test-file value="$PROJECT_DIR$/__tests__/storageHelpers-tests.js" />
       <test-names>
         <test-name value="[loadFromStorage] should not return value if ttl is expired" />
-      </test-names>
-    </configuration>
-    <configuration name="[loadFromStorage] should return null if item is not present" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/__tests__/storageHelpers-tests.js" />
-      <test-names>
-        <test-name value="[loadFromStorage] should return null if item is not present" />
       </test-names>
     </configuration>
     <configuration name="[loadFromStorage] should return parsed value if present (w ttl)" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
@@ -220,20 +209,31 @@
         <test-name value="[saveInStorage] should not save if lifespan is 0" />
       </test-names>
     </configuration>
+    <configuration name="[saveInStorage] should save items w ttl if lifespan is defined " type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/__tests__/storageHelpers-tests.js" />
+      <test-names>
+        <test-name value="[saveInStorage] should save items w ttl if lifespan is defined " />
+      </test-names>
+    </configuration>
     <list>
-      <item itemvalue="Jest.[loadFromStorage] should return null if item is not present" />
       <item itemvalue="Jest.[loadFromStorage] should return value if present " />
       <item itemvalue="Jest.[loadFromStorage] should not return value if ttl is expired" />
       <item itemvalue="Jest.[loadFromStorage] should return parsed value if present (w ttl)" />
       <item itemvalue="Jest.[saveInStorage] should not save if lifespan is 0" />
+      <item itemvalue="Jest.[saveInStorage] should save items w ttl if lifespan is defined " />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.[saveInStorage] should save items w ttl if lifespan is defined " />
         <item itemvalue="Jest.[saveInStorage] should not save if lifespan is 0" />
         <item itemvalue="Jest.[loadFromStorage] should return parsed value if present (w ttl)" />
         <item itemvalue="Jest.[loadFromStorage] should not return value if ttl is expired" />
         <item itemvalue="Jest.[loadFromStorage] should return value if present " />
-        <item itemvalue="Jest.[loadFromStorage] should return null if item is not present" />
       </list>
     </recent_temporary>
   </component>
@@ -250,17 +250,11 @@
       <workItem from="1532597342496" duration="1545000" />
       <workItem from="1532599232736" duration="4368000" />
       <workItem from="1532608949698" duration="244000" />
-      <workItem from="1533850023919" duration="1729000" />
+      <workItem from="1533850023919" duration="2103000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="[loadFromStorage]_should_return_value_if_present_ - 2018.07.26 at 14h 30m 54s.xml">
-      <configuration name="[loadFromStorage] should return value if present " configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="[loadFromStorage]_should_return_value_if_present_ - 2018.07.26 at 14h 31m 25s.xml">
-      <configuration name="[loadFromStorage] should return value if present " configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="[loadFromStorage]_should_not_return_value_if_ttl_is_expired - 2018.08.09 at 23h 28m 51s.xml">
       <configuration name="[loadFromStorage] should not return value if ttl is expired" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
@@ -285,9 +279,15 @@
     <history-entry file="[saveInStorage]_should_not_save_if_lifespan_is_0 - 2018.08.09 at 23h 53m 44s.xml">
       <configuration name="[saveInStorage] should not save if lifespan is 0" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="[saveInStorage]_should_save_items_w_ttl_if_lifespan_is_defined_ - 2018.08.10 at 00h 03m 18s.xml">
+      <configuration name="[saveInStorage] should save items w ttl if lifespan is defined " configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="[saveInStorage]_should_save_items_w_ttl_if_lifespan_is_defined_ - 2018.08.10 at 00h 03m 42s.xml">
+      <configuration name="[saveInStorage] should save items w ttl if lifespan is defined " configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7892000" />
+    <option name="totallyTimeSpent" value="8266000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
@@ -300,7 +300,7 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.3296593" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.41883767" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41883767" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -511,8 +511,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/__tests__/storageHelpers-tests.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="790">
-          <caret line="90" column="48" selection-start-line="90" selection-start-column="48" selection-end-line="90" selection-end-column="48" />
+        <state relative-caret-position="409">
+          <caret line="108" column="106" lean-forward="true" selection-start-line="108" selection-start-column="106" selection-end-line="108" selection-end-column="106" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
           </folding>
