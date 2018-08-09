@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63ff5584-3052-4d77-aebc-3e8df34607cc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__tests__/storageHelpers-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/storageHelpers-tests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/storageHelpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/storageHelpers.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="storageHelpers-tests.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="storageHelpers-tests.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/__tests__/storageHelpers-tests.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="40" column="2" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
+            <state relative-caret-position="428">
+              <caret line="80" column="3" lean-forward="true" selection-start-line="80" selection-start-column="3" selection-end-line="80" selection-end-column="3" />
               <folding>
                 <element signature="e#0#56#0" expanded="true" />
               </folding>
@@ -30,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="storageHelpers.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="storageHelpers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/storageHelpers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            <state relative-caret-position="690">
+              <caret line="46" column="7" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
               <folding>
                 <element signature="e#0#79#0" expanded="true" />
               </folding>
@@ -81,6 +79,7 @@
       <find>eslint</find>
       <find>beforeEach</find>
       <find>getObjectFromString</find>
+      <find>loadFromStorage =</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -96,8 +95,8 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/__mocks__/storage.js" />
         <option value="$PROJECT_DIR$/.eslintrc.yml" />
-        <option value="$PROJECT_DIR$/__tests__/storageHelpers-tests.js" />
         <option value="$PROJECT_DIR$/src/storageHelpers.js" />
+        <option value="$PROJECT_DIR$/__tests__/storageHelpers-tests.js" />
       </list>
     </option>
   </component>
@@ -164,7 +163,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.[loadFromStorage] should return parsed value if present (w ttl)">
+  <component name="RunManager" selected="Jest.[saveInStorage] should not save if lifespan is 0">
     <configuration name="[loadFromStorage] should not return value if ttl is expired" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -209,14 +208,27 @@
         <test-name value="[loadFromStorage] should return value if present " />
       </test-names>
     </configuration>
+    <configuration name="[saveInStorage] should not save if lifespan is 0" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/__tests__/storageHelpers-tests.js" />
+      <test-names>
+        <test-name value="[saveInStorage] should not save if lifespan is 0" />
+      </test-names>
+    </configuration>
     <list>
       <item itemvalue="Jest.[loadFromStorage] should return null if item is not present" />
       <item itemvalue="Jest.[loadFromStorage] should return value if present " />
       <item itemvalue="Jest.[loadFromStorage] should not return value if ttl is expired" />
       <item itemvalue="Jest.[loadFromStorage] should return parsed value if present (w ttl)" />
+      <item itemvalue="Jest.[saveInStorage] should not save if lifespan is 0" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.[saveInStorage] should not save if lifespan is 0" />
         <item itemvalue="Jest.[loadFromStorage] should return parsed value if present (w ttl)" />
         <item itemvalue="Jest.[loadFromStorage] should not return value if ttl is expired" />
         <item itemvalue="Jest.[loadFromStorage] should return value if present " />
@@ -237,23 +249,11 @@
       <workItem from="1532597342496" duration="1545000" />
       <workItem from="1532599232736" duration="4368000" />
       <workItem from="1532608949698" duration="244000" />
-      <workItem from="1533850023919" duration="1074000" />
+      <workItem from="1533850023919" duration="1473000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="[loadFromStorage]_should_return_value_if_present_ - 2018.07.26 at 14h 16m 28s.xml">
-      <configuration name="[loadFromStorage] should return value if present " configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="[loadFromStorage]_should_return_value_if_present_ - 2018.07.26 at 14h 18m 40s.xml">
-      <configuration name="[loadFromStorage] should return value if present " configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="[loadFromStorage]_should_return_value_if_present_ - 2018.07.26 at 14h 19m 02s.xml">
-      <configuration name="[loadFromStorage] should return value if present " configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="[loadFromStorage]_should_return_value_if_present_ - 2018.07.26 at 14h 24m 46s.xml">
-      <configuration name="[loadFromStorage] should return value if present " configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="[loadFromStorage]_should_return_value_if_present_ - 2018.07.26 at 14h 26m 14s.xml">
       <configuration name="[loadFromStorage] should return value if present " configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
@@ -272,26 +272,38 @@
     <history-entry file="[loadFromStorage]_should_return_parsed_value_if_present_(w_ttl) - 2018.08.09 at 23h 38m 38s.xml">
       <configuration name="[loadFromStorage] should return parsed value if present (w ttl)" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="[loadFromStorage]_should_return_parsed_value_if_present_(w_ttl) - 2018.08.09 at 23h 47m 21s.xml">
+      <configuration name="[loadFromStorage] should return parsed value if present (w ttl)" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="[loadFromStorage]_should_return_parsed_value_if_present_(w_ttl) - 2018.08.09 at 23h 48m 34s.xml">
+      <configuration name="[loadFromStorage] should return parsed value if present (w ttl)" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="[loadFromStorage]_should_return_parsed_value_if_present_(w_ttl) - 2018.08.09 at 23h 48m 40s.xml">
+      <configuration name="[loadFromStorage] should return parsed value if present (w ttl)" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="[saveInStorage]_should_not_save_if_lifespan_is_0 - 2018.08.09 at 23h 53m 19s.xml">
+      <configuration name="[saveInStorage] should not save if lifespan is 0" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7237000" />
+    <option name="totallyTimeSpent" value="7636000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3296593" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3296593" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.41883767" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41883767" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997996" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997996" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -308,13 +320,28 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
         <expression-string>wrapper.item</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>wrapper.ttl</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>rawItem.ttl</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>isValidTTL(rawItem.ttl)</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -471,22 +498,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/__tests__/storageHelpers-tests.js">
+    <entry file="file://$PROJECT_DIR$/src/storageHelpers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="40" column="2" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
+        <state relative-caret-position="690">
+          <caret line="46" column="7" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
           <folding>
-            <element signature="e#0#56#0" expanded="true" />
+            <element signature="e#0#79#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/storageHelpers.js">
+    <entry file="file://$PROJECT_DIR$/__tests__/storageHelpers-tests.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        <state relative-caret-position="428">
+          <caret line="80" column="3" lean-forward="true" selection-start-line="80" selection-start-column="3" selection-end-line="80" selection-end-column="3" />
           <folding>
-            <element signature="e#0#79#0" expanded="true" />
+            <element signature="e#0#56#0" expanded="true" />
           </folding>
         </state>
       </provider>

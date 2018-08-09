@@ -1,4 +1,4 @@
-import { loadFromStorage } from '../src/storageHelpers';
+import { loadFromStorage, saveInStorage } from '../src/storageHelpers';
 import { StorageMock } from '../__mocks__/storage';
 
 const date = new Date();
@@ -67,4 +67,15 @@ test('[loadFromStorage] should not return value if ttl is expired', () => {
   items.forEach(i => storageMock.setItem(i.name, i.value));
   const storageFn = () => storageMock;
   items.forEach(i => expect(loadFromStorage({ storageFn, itemName: i.name })).toBeNull());
+});
+
+test('[saveInStorage] should not save if lifespan is 0', () => {
+  const storageMock = new StorageMock();
+  const items = [
+    { name: 'test_string', value: 'foo' },
+    { name: 'test_object', value: testObj },
+    { name: 'test_array', value: testArray },
+  ];
+  items.forEach(i => saveInStorage({ itemName: i.name, item: i.value, lifespan: 0 }));
+  items.forEach(i => expect(storageMock.getItem(i.name)).toBeNull());
 });
