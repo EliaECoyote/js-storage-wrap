@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63ff5584-3052-4d77-aebc-3e8df34607cc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/web-storage-wrap.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/web-storage-wrap.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__tests__/storageHelpers-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/storageHelpers-tests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/storageHelpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/storageHelpers.js" afterDir="false" />
-    </list>
+    <list default="true" id="63ff5584-3052-4d77-aebc-3e8df34607cc" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -286,7 +278,7 @@
       <workItem from="1532597342496" duration="1545000" />
       <workItem from="1532599232736" duration="4368000" />
       <workItem from="1532608949698" duration="244000" />
-      <workItem from="1533850023919" duration="3790000" />
+      <workItem from="1533850023919" duration="3899000" />
     </task>
     <servers />
   </component>
@@ -323,7 +315,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9953000" />
+    <option name="totallyTimeSpent" value="10062000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
@@ -333,8 +325,8 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3296593" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.41883767" />
-      <window_info anchor="right" id="Coverage" side_tool="true" visible="true" weight="0.3297619" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.41883767" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.3297619" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
