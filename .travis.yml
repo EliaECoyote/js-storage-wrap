@@ -1,13 +1,15 @@
 language: node_js
 node_js:
-- '8'
+  - '8'
+before_install:
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
 install:
-- yarn install
+  - yarn install
 script:
-- yarn test
-- yarn rollup
-- npm whoami
-- npm publish
+  - yarn test
+  - yarn rollup
+  - npm whoami
+  - npm publish
 deploy:
   provider: npm
   email: elia.camposilvan@gmail.com
