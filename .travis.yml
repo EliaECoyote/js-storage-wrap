@@ -11,8 +11,7 @@ script:
 deploy:
   provider: npm
   email: elia.camposilvan@gmail.com
-  api_key:
-    secure: ZWwZJ9kGqDB6zLnye9p4ZNGhqYnytG+LxSiiHpkd2N2bJU/AMf6Pq8YSmmU4bw/QSbo6/Xvrtv51SeaAutSCIIyTVbaPnkafNvY3TaZF4thcxlLZMawdSUrWqugd6UM3dAS53mAn2rhrB5QtYs4FVnxw5+tUNG7UCNvO120SMKLrN8q2ZhtCrKZG/3US7aWZ11PsHUsH4beMQTYWBpnq+BKwZyuHd5hHxhQVmbFo59VA45rRWMF0vl9c8K9eTU7Ok+MJvmLaTtcwV+ocXbwg8OZsOg9nBpKW7IsET5SR/VTPyecf9cEzSDmfMBo4tlYVVClCNfWFnEqxfEofNpfvrlBVX5MsGMlkKVrmQ7A0d7RynOSpk7Bni2LMvIk7fZX4wHCqSDFukSYKS7iU1vyYTQMEebUKFR2jQoeU7vxcvikyl1g5glQ9m2REfxMiw+EHPPWZr2iFL8WhpwwZDBYqMqkXzr+3x+rpJfKwtg/Cgj2B7qgZY1Wtjlc4z1BS8pPqrQFn3j2nc6OTzkyN/LHLBP0KsEslt5vwu7tJQ0resgfUlwrhe5Lw+Not8hWP9ykDX7QigSkLCMElPwz7fYgmmjnt6F+uqyiqJ00IZzptct9qY6jtTRfg5UfDGVb1pQvgoXdFU4trvadkos5pU4fuHqukEGoAikvfr+5seQ/8DRM=
+  api_key: $NPM_TOKEN
   tag: next
   on:
     tags: true
