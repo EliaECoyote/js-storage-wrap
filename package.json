@@ -1,6 +1,6 @@
 {
-  "name": "storage-wrap",
-  "version": "0.0.4",
+  "name": "js-storage-wrap",
+  "version": "0.0.5",
   "description": "web localStorage & sessionStorage wrapper",
   "main": "dist/bundle.js",
   "author": "elia.camposilvan@gmail.com",
@@ -8,8 +8,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "engines" : {
-    "node" : ">=4"
+  "engines": {
+    "node": ">=4"
   },
   "jest": {
     "transform": {

@@ -6,6 +6,7 @@ install:
 script:
   - yarn test
   - yarn rollup
+  - npm publish
 deploy:
   provider: npm
   email: elia.camposilvan@gmail.com
