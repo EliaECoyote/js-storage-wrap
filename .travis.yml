@@ -1,9 +1,12 @@
 language: node_js
 node_js:
-  - "4"
-  - "lts/*"
+  - "6"
+  - "iojs"
 install:
   - yarn install
+script:
+  - yarn test
+  - yarn rollup
 deploy:
   provider: npm
   email: elia.camposilvan@gmail.com
