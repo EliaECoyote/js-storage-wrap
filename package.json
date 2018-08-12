@@ -5,6 +5,9 @@
   "main": "dist/bundle.js",
   "author": "elia.camposilvan@gmail.com",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "jest": {
     "transform": {
       "^.+\\.js$": "babel-jest"

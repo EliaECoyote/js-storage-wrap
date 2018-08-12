@@ -1,0 +1,13 @@
+language: node_js
+install:
+  - yarn install
+deploy:
+  provider: npm
+  email: elia.camposilvan@gmail.com
+  api_key:
+    secure: h3/qdYIkpYcL7HaEQrbzd7EKNxpaQGbh+l3n9dVpPx3/w6n4CqrDLzpH8gbMqi3AE3d3tCwLKooocXn09ygUX+fvrO6JvQ5vUrkCyrjoJZNBWybvvnZIj2+6MgH0DOF3WxCMIEXB6PHs4MBqDVnl7Lk0AbE3ZqGfeOUTbq1pEg1bjgQ4gf5ngdb8Gly6SN3eGtyKRY23LpAioGXloQS5Sw4PgAvj8QY8347cjZgMQ1u9H8dOxf5FiXWK+iTLQycRd5CYv8swb43RfjBNo7FiwSxq4iUrEGgftyl6GChlQ5Eefm5bxSpUgmvT1nbuvtEiDXXRUCEafIG1sWZyMtc5KyJNdYnKCsN+AOxnxYtzzPPjMTfRtEoy5rr/f7vv+WKN/icCAopsmbaEV/LiWXa9K3dsx12N7pMCYt9cagWP+RTxVmE/wPDTeht8l1vgxe6xmGdy2iFEZEMcIxR300vtK+uTqE9w4Vv/Y2CV/PzP/JmYWcqkogG5r65Z4jsZZ3Fm/BPelLKjybFQFvvGyo+xFRMjHb7kD1r3OwHMyLPP8+JpS1JejIQQYBltbjZIVK6E2FoWsvttUFr8oYnYrqQjzcH5MAkla1zYRfx3LCZP7ivYHFOoN95aMYEwLEhzZyjrrjzH7h5zUIBEavlusNGwNIBL2PY+u2ICr0jUyvizOPM=
+  tag: next
+  on:
+    tags: true
+    branch: master
+    repo: asulta/storage-wrap
