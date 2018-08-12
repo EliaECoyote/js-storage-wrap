@@ -8,6 +8,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "engines" : {
+    "node" : ">=4"
+  },
   "jest": {
     "transform": {
       "^.+\\.js$": "babel-jest"
