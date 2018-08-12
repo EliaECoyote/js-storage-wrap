@@ -6,16 +6,16 @@ before_install:
 install:
   - yarn install
 script:
-  - yarn test
+  - yarn test --coverage && cat ./coverage/lcov.info | yarn coveralls && rm -rf ./coverage
   - yarn rollup
   - npm whoami
   - npm publish
 deploy:
   provider: npm
+  skip_cleanup: true
   email: elia.camposilvan@gmail.com
   api_key: $NPM_TOKEN
   tag: next
   on:
     tags: true
-    branch: master
     repo: asulta/storage-wrap
