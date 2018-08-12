@@ -1,17 +1,18 @@
 language: node_js
 node_js:
-  - "8"
+- '8'
 install:
-  - yarn install
+- yarn install
 script:
-  - yarn test
-  - yarn rollup
-  - npm publish
+- yarn test
+- yarn rollup
+- npm whoami
+- npm publish
 deploy:
   provider: npm
   email: elia.camposilvan@gmail.com
   api_key:
-    secure: h3/qdYIkpYcL7HaEQrbzd7EKNxpaQGbh+l3n9dVpPx3/w6n4CqrDLzpH8gbMqi3AE3d3tCwLKooocXn09ygUX+fvrO6JvQ5vUrkCyrjoJZNBWybvvnZIj2+6MgH0DOF3WxCMIEXB6PHs4MBqDVnl7Lk0AbE3ZqGfeOUTbq1pEg1bjgQ4gf5ngdb8Gly6SN3eGtyKRY23LpAioGXloQS5Sw4PgAvj8QY8347cjZgMQ1u9H8dOxf5FiXWK+iTLQycRd5CYv8swb43RfjBNo7FiwSxq4iUrEGgftyl6GChlQ5Eefm5bxSpUgmvT1nbuvtEiDXXRUCEafIG1sWZyMtc5KyJNdYnKCsN+AOxnxYtzzPPjMTfRtEoy5rr/f7vv+WKN/icCAopsmbaEV/LiWXa9K3dsx12N7pMCYt9cagWP+RTxVmE/wPDTeht8l1vgxe6xmGdy2iFEZEMcIxR300vtK+uTqE9w4Vv/Y2CV/PzP/JmYWcqkogG5r65Z4jsZZ3Fm/BPelLKjybFQFvvGyo+xFRMjHb7kD1r3OwHMyLPP8+JpS1JejIQQYBltbjZIVK6E2FoWsvttUFr8oYnYrqQjzcH5MAkla1zYRfx3LCZP7ivYHFOoN95aMYEwLEhzZyjrrjzH7h5zUIBEavlusNGwNIBL2PY+u2ICr0jUyvizOPM=
+    secure: ZWwZJ9kGqDB6zLnye9p4ZNGhqYnytG+LxSiiHpkd2N2bJU/AMf6Pq8YSmmU4bw/QSbo6/Xvrtv51SeaAutSCIIyTVbaPnkafNvY3TaZF4thcxlLZMawdSUrWqugd6UM3dAS53mAn2rhrB5QtYs4FVnxw5+tUNG7UCNvO120SMKLrN8q2ZhtCrKZG/3US7aWZ11PsHUsH4beMQTYWBpnq+BKwZyuHd5hHxhQVmbFo59VA45rRWMF0vl9c8K9eTU7Ok+MJvmLaTtcwV+ocXbwg8OZsOg9nBpKW7IsET5SR/VTPyecf9cEzSDmfMBo4tlYVVClCNfWFnEqxfEofNpfvrlBVX5MsGMlkKVrmQ7A0d7RynOSpk7Bni2LMvIk7fZX4wHCqSDFukSYKS7iU1vyYTQMEebUKFR2jQoeU7vxcvikyl1g5glQ9m2REfxMiw+EHPPWZr2iFL8WhpwwZDBYqMqkXzr+3x+rpJfKwtg/Cgj2B7qgZY1Wtjlc4z1BS8pPqrQFn3j2nc6OTzkyN/LHLBP0KsEslt5vwu7tJQ0resgfUlwrhe5Lw+Not8hWP9ykDX7QigSkLCMElPwz7fYgmmjnt6F+uqyiqJ00IZzptct9qY6jtTRfg5UfDGVb1pQvgoXdFU4trvadkos5pU4fuHqukEGoAikvfr+5seQ/8DRM=
   tag: next
   on:
     tags: true
