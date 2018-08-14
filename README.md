@@ -10,6 +10,6 @@
 
 
 ## Installation
-`js-storage-wrap` comes as a UMD module, so it's available trough npm with:
+`js-storage-wrap` comes as a CommonJS module, so it's available trough npm with:
 
 `npm install --save js-storage-wrap`
