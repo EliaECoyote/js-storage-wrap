@@ -10,12 +10,12 @@ export const loadFromStorage = ({ storageFn, itemName }) => {
       return null;
     }
     const wrapper = getObjectFromString(rawItem);
-    if (wrapper == null) {
+    if (wrapper == null) {
       return rawItem;
     }
     if (wrapper.ttl != null) {
       if (isValidTTL(wrapper.ttl)) {
-        return wrapper.item
+        return wrapper.item;
       }
       storage.removeItem(itemName);
       return null;
@@ -47,6 +47,6 @@ export const saveInStorage = ({
   }
 };
 
-export const hasItem = ({ storageFn, itemName }) => {
-  return loadFromStorage({ storageFn, itemName }) != null;
-};
+export const hasItem = ({
+  storageFn, itemName,
+}) => loadFromStorage({ storageFn, itemName }) != null;
