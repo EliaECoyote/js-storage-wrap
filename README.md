@@ -1,4 +1,5 @@
-# Js storage wrap &middot; [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Build Status](https://travis-ci.org/asulta/js-storage-wrap.svg?branch=master)](https://travis-ci.org/asulta/js-storage-wrap) [![Coverage Status](https://coveralls.io/repos/github/asulta/js-storage-wrap/badge.svg?branch=master)](https://coveralls.io/github/asulta/js-storage-wrap?branch=master)
+# Js storage wrap &middot; [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Build Status](https://travis-ci.org/asulta/js-storage-wrap.svg?branch=master)](https://travis-ci.org/asulta/js-storage-wrap) [![Coverage Status](https://coveralls.io/repos/github/asulta/js-storage-wrap/badge.svg?branch=master)](https://coveralls.io/github/asulta/js-storage-wrap?branch=master) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
 
 `js-storage-wrap` is a simple web storage interface
 
