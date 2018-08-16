@@ -1,6 +1,6 @@
 {
   "name": "js-storage-wrap",
-  "version": "0.0.12",
+  "version": "0.0.0-development",
   "description": "web localStorage & sessionStorage wrapper",
   "main": "dist/bundle.js",
   "author": "elia.camposilvan@gmail.com",
@@ -33,12 +33,21 @@
     "jest": "^23.4.1",
     "prettier": "^1.14.2",
     "rollup": "^0.63.2",
-    "rollup-plugin-babel": "^3.0.7"
+    "rollup-plugin-babel": "^3.0.7",
+    "semantic-release-cli": "^4.0.7",
+    "semantic-release": "^15.9.8",
+    "travis-deploy-once": "^5.0.2"
   },
   "scripts": {
     "rollup": "NODE_ENV=production node ./rollup/build.js",
     "test": "jest",
     "lint": "eslint ./",
-    "lint:fix": "eslint --fix ./"
+    "lint:fix": "eslint --fix ./",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asulta/js-storage-wrap.git"
   }
 }

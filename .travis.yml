@@ -1,6 +1,16 @@
 language: node_js
+cache:
+  directories:
+    - ~/.npm
+notifications:
+  email: false
 node_js:
+  - '10'
+  - '9'
   - '8'
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
 before_install:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
 install:
@@ -17,4 +27,6 @@ deploy:
   script: bash deploy.sh
   on:
     tags: true
-    repo: asulta/storage-wrap
+    repo: asulta/js-storage-wrap
+after_success:
+  - npm run travis-deploy-once "npm run semantic-release"
