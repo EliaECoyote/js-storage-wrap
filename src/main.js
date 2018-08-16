@@ -1,4 +1,4 @@
-import { StorageWrapper } from './storage';
+import StorageWrapper from './storage';
 
 const storage = new StorageWrapper();
 
