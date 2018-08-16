@@ -1,17 +1,17 @@
-export const getTTL = (lifespan) => {
+export const getTTL = lifespan => {
   const currentTime = new Date().getTime();
   return lifespan > 0 ? currentTime + lifespan : currentTime;
 };
 
-export const isValidTTL = (timestamp) => {
+export const isValidTTL = timestamp => {
   const currentTime = new Date().getTime();
   return currentTime <= timestamp;
 };
 
 export const isObject = val => val === Object(val);
 
-export const getObjectFromString = (string) => {
-  if (typeof string === 'number') {
+export const getObjectFromString = string => {
+  if (typeof string === "number") {
     return null;
   }
   try {

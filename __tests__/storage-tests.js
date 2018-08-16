@@ -1,11 +1,11 @@
-import { StorageWrapper } from '../src/storage';
+import StorageWrapper from "../src/storage";
 
-test('[StorageWrapper] should return null / false if storage not available', () => {
+test("[StorageWrapper] should return null / false if storage not available", () => {
   global.console = { warn: jest.fn() };
   const storageWrapper = new StorageWrapper();
-  const loadedItem = storageWrapper.local.load('test');
-  const hadSuccessSetting = storageWrapper.local.set('test', 'test');
-  const hadSuccessChecking = storageWrapper.local.has('test');
+  const loadedItem = storageWrapper.local.load("test");
+  const hadSuccessSetting = storageWrapper.local.set("test", "test");
+  const hadSuccessChecking = storageWrapper.local.has("test");
   expect(loadedItem).toBeNull();
   expect(hadSuccessSetting).toBe(false);
   expect(hadSuccessChecking).toBe(false);

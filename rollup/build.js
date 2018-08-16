@@ -4,18 +4,18 @@ const rollup = require('rollup');
 const babel = require('rollup-plugin-babel');
 
 const inputOptions = {
-  input: 'src/main.js',
+  input: "src/main.js",
   plugins: [
     babel({
-      exclude: 'node_modules/**',
-    }),
-  ],
+      exclude: "node_modules/**"
+    })
+  ]
 };
 
 const outputOptions = {
-  dir: 'dist',
-  file: 'bundle.js',
-  format: 'cjs',
+  dir: "dist",
+  file: "bundle.js",
+  format: "cjs"
 };
 
 const build = async () => {

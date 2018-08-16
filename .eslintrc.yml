@@ -1,7 +1,10 @@
 extends:
   - airbnb-base
   - plugin:jest/recommended
+  - prettier
 plugins:
   - jest
+  - prettier
 rules:
   object-property-newline: 2
+  prettier/prettier: 2

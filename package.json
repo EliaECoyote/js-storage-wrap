@@ -26,15 +26,19 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jest": "^21.18.0",
+    "eslint-plugin-prettier": "^2.6.2",
     "jest": "^23.4.1",
+    "prettier": "^1.14.2",
     "rollup": "^0.63.2",
     "rollup-plugin-babel": "^3.0.7"
   },
   "scripts": {
     "rollup": "NODE_ENV=production node ./rollup/build.js",
     "test": "jest",
-    "lint": "eslint"
+    "lint": "eslint ./",
+    "lint:fix": "eslint --fix ./"
   }
 }
