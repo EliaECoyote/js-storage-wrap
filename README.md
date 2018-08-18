@@ -47,3 +47,9 @@ Returns a bool that indicates if the item exists and it isn't expired.
 ```javascript
 const isItemAvailable = StorageWrap.local.has('my_token');
 ```
+
+### `developmentMode`
+This fn activates informative logs emitted upon errors / ttl reached
+```javascript
+StorageWrap.developmentMode();
+```
