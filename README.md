@@ -48,7 +48,14 @@ Returns a bool that indicates if the item exists and it isn't expired.
 const isItemAvailable = StorageWrap.local.has('my_token');
 ```
 
-### `developmentMode`
+### `setLifespan(itemName: string, lifespan: number)`
+Sets the lifespan of a specific item.\
+This requires the previous item to have a valid ttl assigned
+```javascript
+const success = StorageWrap.local.setLifespan('my_token', 3000);
+```
+
+### `developmentMode()`
 This fn activates informative logs emitted upon errors / ttl reached
 ```javascript
 StorageWrap.developmentMode();

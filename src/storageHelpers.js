@@ -79,15 +79,14 @@ export const updateTtl = ({ storageFn, itemName, lifespan }) => {
     trackInfo(
       "[update lifespan] item found did not previously had a ttl or has an incorrect format"
     );
-    return false;
   } catch (err) {
     trackInfo(
       "[update lifespan] error while updating lifespan",
       { itemName, lifespan },
       err
     );
-    return false;
   }
+  return false;
 };
 
 export const hasItem = ({ storageFn, itemName }) =>
