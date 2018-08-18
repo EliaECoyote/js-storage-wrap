@@ -1,4 +1,10 @@
-import { getObjectFromString, getTTL, isObject, isValidTTL } from "./utils";
+import {
+  getObjectFromString,
+  getTTL,
+  isObject,
+  isValidTTL,
+  trackInfo
+} from "./utils";
 
 export const loadFromStorage = ({ storageFn, itemName }) => {
   try {
@@ -16,17 +22,21 @@ export const loadFromStorage = ({ storageFn, itemName }) => {
         return wrapper.item;
       }
       storage.removeItem(itemName);
+      trackInfo(`[load item] ttl expired for ${itemName}. Item removed`);
       return null;
     }
     return wrapper;
   } catch (err) {
-    console.warn(err);
+    trackInfo(`[load item] error encountered while loading ${itemName}`, err);
     return null;
   }
 };
 
 export const saveInStorage = ({ storageFn, item, itemName, lifespan }) => {
   if (lifespan === 0) {
+    trackInfo(
+      `[save item] lifespan === 0 detected. Therefore not saving ${itemName}`
+    );
     return false;
   }
   try {
@@ -40,7 +50,11 @@ export const saveInStorage = ({ storageFn, item, itemName, lifespan }) => {
     }
     return true;
   } catch (err) {
-    console.warn(err);
+    trackInfo(
+      `[save item] error encountered while saving`,
+      { itemName, item },
+      err
+    );
     return false;
   }
 };

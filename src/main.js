@@ -1,5 +1,5 @@
-import StorageWrapper from "./storage";
+import buildNewStorageWrapper from "./storage";
 
-const storage = new StorageWrapper();
+const storage = buildNewStorageWrapper();
 
 export default storage;

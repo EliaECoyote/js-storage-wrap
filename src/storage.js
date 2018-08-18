@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import { loadFromStorage, saveInStorage, hasItem } from "./storageHelpers";
+import { activateLogs } from "./utils";
 
 const initializeForStorage = storageFn => ({
   load: itemName => loadFromStorage({ storageFn, itemName }),
@@ -13,9 +14,8 @@ const initializeForStorage = storageFn => ({
   has: itemName => hasItem({ storageFn, itemName })
 });
 
-export default class StorageWrapper {
-  constructor() {
-    this.local = initializeForStorage(() => localStorage);
-    this.session = initializeForStorage(() => sessionStorage);
-  }
-}
+export default () => ({
+  local: initializeForStorage(() => localStorage),
+  session: initializeForStorage(() => sessionStorage),
+  developmentMode: () => activateLogs()
+});

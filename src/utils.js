@@ -1,3 +1,12 @@
+let shouldLog;
+
+export const activateLogs = () => {
+  shouldLog = true;
+};
+
+export const trackInfo = (...args) =>
+  shouldLog && console.log(`[JsStorageWrap] `, ...args);
+
 export const getTTL = lifespan => {
   const currentTime = new Date().getTime();
   return lifespan > 0 ? currentTime + lifespan : currentTime;
