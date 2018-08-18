@@ -1,5 +1,10 @@
 /* eslint-disable no-undef */
-import { loadFromStorage, saveInStorage, hasItem } from "./storageHelpers";
+import {
+  loadFromStorage,
+  saveInStorage,
+  hasItem,
+  updateTtl
+} from "./storageHelpers";
 import { activateLogs } from "./utils";
 
 const initializeForStorage = storageFn => ({
@@ -11,6 +16,8 @@ const initializeForStorage = storageFn => ({
       item,
       lifespan
     }),
+  setLifespan: (itemName, lifespan) =>
+    updateTtl({ storageFn, itemName, lifespan }),
   has: itemName => hasItem({ storageFn, itemName })
 });
 

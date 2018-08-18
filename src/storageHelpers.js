@@ -59,5 +59,36 @@ export const saveInStorage = ({ storageFn, item, itemName, lifespan }) => {
   }
 };
 
+export const updateTtl = ({ storageFn, itemName, lifespan }) => {
+  try {
+    const storage = storageFn();
+    const rawItem = storage.getItem(itemName);
+    if (rawItem && lifespan && lifespan !== 0) {
+      const wrapper = getObjectFromString(rawItem);
+      if (wrapper && wrapper.ttl != null) {
+        if (isValidTTL(wrapper.ttl)) {
+          saveInStorage({ storageFn, item: wrapper.item, itemName, lifespan });
+          return true;
+        }
+        trackInfo(
+          "[update lifespan] ttl is already reached - cannot update ttl"
+        );
+        return false;
+      }
+    }
+    trackInfo(
+      "[update lifespan] item found did not previously had a ttl or has an incorrect format"
+    );
+    return false;
+  } catch (err) {
+    trackInfo(
+      "[update lifespan] error while updating lifespan",
+      { itemName, lifespan },
+      err
+    );
+    return false;
+  }
+};
+
 export const hasItem = ({ storageFn, itemName }) =>
   loadFromStorage({ storageFn, itemName }) != null;

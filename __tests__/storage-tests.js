@@ -46,11 +46,11 @@ test("[StorageWrapper] should not return value if not present", () => {
 });
 
 test("[StorageWrapper] should return value if present (w ttl)", () => {
+  global.sessionStorage = new StorageMock();
   const date = new Date();
   date.setMilliseconds(0);
   global.Date = jest.fn(() => date);
   const storageWrapper = new StorageWrapper();
-  global.sessionStorage = new StorageMock();
   items.forEach(item => storageWrapper.session.set(item.name, item.value, 1));
   items.forEach(item =>
     expect(storageWrapper.session.load(item.name)).toEqual(item.value)
@@ -58,6 +58,21 @@ test("[StorageWrapper] should return value if present (w ttl)", () => {
   date.setMilliseconds(2);
   items.forEach(item =>
     expect(storageWrapper.session.load(item.name)).toBe(null)
+  );
+  global.Date = Date;
+});
+
+test("[StorageWrapper] should update lifespan correctly", () => {
+  global.sessionStorage = new StorageMock();
+  const date = new Date();
+  date.setMilliseconds(0);
+  global.Date = jest.fn(() => date);
+  const storageWrapper = new StorageWrapper();
+  items.forEach(item => storageWrapper.session.set(item.name, item.value, 1));
+  items.forEach(item => storageWrapper.session.setLifespan(item.name, 10));
+  date.setMilliseconds(10);
+  items.forEach(item =>
+    expect(storageWrapper.session.load(item.name)).toEqual(item.value)
   );
   global.Date = Date;
 });
