@@ -3,11 +3,11 @@
 
 `js-storage-wrap` is a simple web storage interface
 
-
-## Features
-- simple api
-- transparent json parse logic
-- optional ttl
+- **Transparent json parse logic**
+- **Handles TTL** &middot; optional lifespan can be associated to each saved element
+- **Ssr friendly** &middot; no window - no problem
+- **100% tests coverage**
+- **Typescript definitions**
 
 
 ## Installation
@@ -30,9 +30,9 @@ Loads item from storage. Returns null if item or storage is not available
 ```javascript
 const token = StorageWrap.local.load('my_token');
 ```
-### `set(itemName: string, item: any, lifespan: ?number): Bool`
+### `set(itemName: string, item: any, lifespan: ?number): boolean`
 Adds / replaces item in storage.\
-Returns a Bool that indicates the success of the operation.\
+Returns a boolean that indicates the success of the operation.\
 the item attribute can be: 
 - any primitive value
 - object
@@ -42,13 +42,13 @@ if `lifespan === 0`, than the item won't be stored. `lifespan` can be omitted.
 ```javascript
 const success = StorageWrap.local.set('my_token', 'bearer test', 3000); // expires after 3 seconds
 ```
-### `has(itemName: string): Bool`
-Returns a bool that indicates if the item exists and it isn't expired.
+### `has(itemName: string): boolean`
+Returns a boolean that indicates if the item exists and it isn't expired.
 ```javascript
 const isItemAvailable = StorageWrap.local.has('my_token');
 ```
 
-### `setLifespan(itemName: string, lifespan: number)`
+### `setLifespan(itemName: string, lifespan: number): boolean`
 Sets the lifespan of a specific item.\
 This requires the previous item to have a valid ttl assigned
 ```javascript

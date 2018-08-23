@@ -5,6 +5,7 @@
   "main": "dist/bundle.js",
   "author": "elia.camposilvan@gmail.com",
   "license": "MIT",
+  "types": "index.d.ts",
   "publishConfig": {
     "access": "public"
   },
