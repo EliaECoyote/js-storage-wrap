@@ -1,6 +1,6 @@
 {
   "name": "js-storage-wrap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "web localStorage & sessionStorage wrapper",
   "main": "dist/bundle.js",
   "author": "elia.camposilvan@gmail.com",
