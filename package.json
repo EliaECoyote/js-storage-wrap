@@ -34,15 +34,13 @@
     "prettier": "^1.14.2",
     "rollup": "^1.19.4",
     "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-terser": "^5.1.1",
-    "travis-deploy-once": "^5.0.2"
+    "rollup-plugin-terser": "^5.1.1"
   },
   "scripts": {
     "rollup": "NODE_ENV=production node ./rollup/build.js",
     "test": "jest",
     "lint": "eslint ./",
-    "lint:fix": "eslint --fix ./",
-    "travis-deploy-once": "travis-deploy-once"
+    "lint:fix": "eslint --fix ./"
   },
   "repository": {
     "type": "git",
