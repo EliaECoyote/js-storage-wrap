@@ -32,7 +32,7 @@ Import StorageWrap from 'js-storage-wrap';
 ### CDN
 
 ```html
-<script crossorigin src="https://unpkg.com/js-storage-wrap@0.1.1/dist/bundle.min.js"></script>
+<script crossorigin src="https://unpkg.com/js-storage-wrap@1.0.0/dist/bundle.min.js"></script>
 ```
 
 ## Api
