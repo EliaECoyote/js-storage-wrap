@@ -22,5 +22,5 @@ const initializeForStorage = storageFn => ({
 
 export default () => ({
   local: initializeForStorage(() => localStorage),
-  session: initializeForStorage(() => sessionStorage),
+  session: initializeForStorage(() => sessionStorage)
 });

@@ -6,8 +6,7 @@ Features:
 
 - json parsing logic
 - TTL handling &middot; optional lifespan can be associated to each saved element
-- SSR friendly &middot; when used on node, it will not invoke the storage functiions
-- 100% tests coverage
+- node friendly &middot; won't invoke the storage functions in node
 - TS definitions
 
 ## Installation
