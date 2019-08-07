@@ -14,6 +14,7 @@ before_install:
 install:
   - yarn install
 script:
+  - yarn lint
   - yarn test
   - yarn rollup
 deploy:
