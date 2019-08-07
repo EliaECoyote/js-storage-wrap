@@ -44,7 +44,7 @@ describe("loadFromStorage helper", () => {
   });
 
   it("should return parsed value if present (w/o ttl)", () => {
-    const storageMock = new StorageMock();
+    const storageMock = StorageMock();
     const items = stringifiedItems;
     items.forEach(i => storageMock.setItem(i.name, i.value));
     const storageFn = () => storageMock;
@@ -60,7 +60,7 @@ describe("loadFromStorage helper", () => {
   });
 
   it("should return parsed value if present (w ttl)", () => {
-    const storageMock = new StorageMock();
+    const storageMock = StorageMock();
     const currentTime = new Date().getTime();
     const ttl = currentTime + 1;
     const items = getStringifiedItemsArray(ttl);
@@ -78,7 +78,7 @@ describe("loadFromStorage helper", () => {
   });
 
   it("should not return value (and also removeItem) if ttl is expired", () => {
-    const storageMock = new StorageMock();
+    const storageMock = StorageMock();
     const currentTime = new Date().getTime();
     const ttl = currentTime - 1;
     const items = getStringifiedItemsArray(ttl);
@@ -98,7 +98,7 @@ describe("loadFromStorage helper", () => {
 
 describe("saveInStorage helper", () => {
   it("should not save if lifespan is 0", () => {
-    const storageMock = new StorageMock();
+    const storageMock = StorageMock();
     const items = plainItems;
     items.forEach(i =>
       saveInStorage({ itemName: i.name, item: i.value, lifespan: 0 })
@@ -107,7 +107,7 @@ describe("saveInStorage helper", () => {
   });
 
   it("should save items w/o ttl if lifespan is not defined ", () => {
-    const storageMock = new StorageMock();
+    const storageMock = StorageMock();
     const storageFn = () => storageMock;
     const items = plainItems;
     items.forEach(i =>
@@ -123,7 +123,7 @@ describe("saveInStorage helper", () => {
   });
 
   it("should save items w ttl if lifespan is defined ", () => {
-    const storageMock = new StorageMock();
+    const storageMock = StorageMock();
     const storageFn = () => storageMock;
     const currentTime = new Date().getTime();
     const ttl = currentTime + lifespan;
@@ -141,7 +141,7 @@ describe("saveInStorage helper", () => {
 
 describe("hasItem helper", () => {
   it("[hasItem] should return true/false if item is present/absent", () => {
-    const storageMock = new StorageMock();
+    const storageMock = StorageMock();
     const storageFn = () => storageMock;
     const currentTime = new Date().getTime();
     const ttl = currentTime + 1;

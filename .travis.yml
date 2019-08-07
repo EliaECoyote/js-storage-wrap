@@ -28,5 +28,3 @@ deploy:
   on:
     tags: true
     repo: asulta/js-storage-wrap
-after_success:
-  - npm run travis-deploy-once "npm run semantic-release"

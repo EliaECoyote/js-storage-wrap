@@ -88,7 +88,7 @@ const success = StorageWrap.local.setLifespan('my_token', 3000);
 ## Contibruting
 
 Any pull request / ideas for improvements or bugfixing is welcome.\
-This repository manages semantic versioning with the [semantic release module](https://github.com/semantic-release/semantic-release)
+This repository manages semantic versioning.
 
 ## License
 
