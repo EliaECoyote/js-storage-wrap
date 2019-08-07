@@ -11,9 +11,13 @@ Features:
 
 ## Installation
 
+### npm
+
 ```sh
 npm install --save js-storage-wrap
 ```
+
+### yarn
 
 ```sh
 yarn add js-storage-wrap
@@ -23,6 +27,12 @@ It will be available through:
 
 ```js
 Import StorageWrap from 'js-storage-wrap';
+```
+
+### CDN
+
+```html
+<script crossorigin src="https://unpkg.com/js-storage-wrap@0.1.1/dist/bundle.min.js"></script>
 ```
 
 ## Api
