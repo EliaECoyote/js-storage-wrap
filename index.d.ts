@@ -8,7 +8,6 @@ interface Storage {
 interface StorageWrapper {
   local: Storage
   session: Storage
-  developmentMode: () => void
 }
 
 export default StorageWrapper;
