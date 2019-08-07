@@ -5,7 +5,6 @@ import {
   hasItem,
   updateTtl
 } from "./storageHelpers";
-import { activateLogs } from "./utils";
 
 const initializeForStorage = storageFn => ({
   load: itemName => loadFromStorage({ storageFn, itemName }),
@@ -23,6 +22,5 @@ const initializeForStorage = storageFn => ({
 
 export default () => ({
   local: initializeForStorage(() => localStorage),
-  session: initializeForStorage(() => sessionStorage),
-  developmentMode: () => activateLogs()
+  session: initializeForStorage(() => sessionStorage)
 });
